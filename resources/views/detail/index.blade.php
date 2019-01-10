@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Tutrial for beginner')
+@section('title', '詳細画面')
 @section('content')
     @if(Auth::check())
         <div class="page-header" style="margin-top: -30px; padding-bottom: 0px;">
