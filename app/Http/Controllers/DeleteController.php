@@ -8,7 +8,7 @@ use App\Book;
 use Illuminate\Support\Facades\DB;
 
 
-class DetailController extends Controller
+class DeleteController extends Controller
 {
     //
     public function index(Request $request)
@@ -20,6 +20,13 @@ class DetailController extends Controller
             'user' => $user,
             'item' => $item,
         ];
-        return view('detail.index', $param);
+        return view('delete.index', $param);
     }
+
+    public function delete(Request $request)
+    {
+        Book::find($request->id)->delete();
+        return redirect('/list');
+    }
+
 }

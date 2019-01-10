@@ -1,23 +1,13 @@
 <nav class="navbar navbar-default" style="background-color: #FFFFFF;">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarEexample2">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" chref="#">
-                <img src="/img/log.png" alt="Laravel学習帳"　style="height: 20px;">
-            </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="navbarEexample2">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">menuA</a></li>
-                <li><a href="#">menuB</a></li>
-                <li><a href="#">menuC</a></li>
+            <span class="sr-only">Toggle navigation</span>
+            <h1 class="icon-bar">ホームページ</h1>
+            <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{action('LogoutController@getLogout')}}">ログアウト</a></li>
+                    <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> 新規登録</a></li>
             </ul>
         </div>
+
     </div>
 </nav>

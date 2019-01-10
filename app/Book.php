@@ -27,6 +27,11 @@ class Book extends Model
         return $this->icon;
     }
 
+    public function getDataImage()
+    {
+        return $this->image;
+    }
+
     public function user()
     {
         return $this->belongsTo('App\User');

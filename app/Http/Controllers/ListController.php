@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Book;
+use Illuminate\Support\Facades\Storage;
 
 class ListController extends Controller
 {
@@ -41,5 +42,6 @@ class ListController extends Controller
             'items' => $items];
         return view('list.index', $param);
     }
+
 
 }

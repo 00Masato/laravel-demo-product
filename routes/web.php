@@ -22,4 +22,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/list', 'ListController@index');
 Route::post('/list', 'ListController@search');
 
-Route::get('/detail', 'DetailController@index');
+Route::get('/detail/{id}', 'DetailController@index');
+
+Route::get('/create', 'CreateController@index');
+Route::post('/create', 'CreateController@create');
+
+Route::get('/update/{id}', 'UpdateController@index');
+Route::post('/update/{id}', 'UpdateController@update');
+
+Route::get('/delete/{id}', 'DeleteController@index');
+Route::post('/delete/{id}', 'DeleteController@delete');
+
+Route::get('/logout', 'LogoutController@getLogout');

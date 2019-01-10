@@ -6,7 +6,7 @@
             <h1><small>{{$user->name}}さんの読書記録</small></h1>
         </div>
     @endif
-    <a href="" class="btn btn-success">新規登録</a>
+    <a href="{{action('CreateController@index')}}" class="btn btn-success">新規登録</a>
     <form action="" method="post" style="text-align: right;">
         {{csrf_field()}}
         <input type="text" name="keyword" value="{{$keyword}}">
@@ -19,6 +19,7 @@
             <th>題名</th>
             <th>カテゴリー</th>
             <th>アイコン</th>
+            <th>画像</th>
             <th>operation</th>
         </tr>
         </thead>
@@ -29,10 +30,11 @@
                     <td>{{$item->getDataBook()}}</td>
                     <td>{{$item->getDataCategory()}}</td>
                     <td>{{$item->getDataIcon()}}</td>
+                    <td><img src="{{asset('/storage/book_images/' . $item->getDataImage())}}"></td>
                     <td>
-                        <a href="" class="btn btn-primary btn-sm">詳細</a>
-                        <a href="" class="btn btn-primary btn-sm">編集</a>
-                        <a href="" class="btn btn-danger btn-sm">削除</a>
+                        <a href="{{action('DetailController@index', $item->getDataId())}}" class="btn btn-primary btn-sm">詳細</a>
+                        <a href="{{action('UpdateController@index', $item->getDataId())}}" class="btn btn-primary btn-sm">編集</a>
+                        <a href="{{action('DeleteController@index', $item->getDataId())}}" class="btn btn-danger btn-sm">削除</a>
                     </td>
                 </tr>
             @endforeach
