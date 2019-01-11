@@ -78,6 +78,9 @@
         <input class="btn btn-primary" type="submit" value="アップロード">
     </form>
 
+    <a href="{{action('ListController@index')}}" class="btn btn-success">戻る</a>
+
+
 
 
 
