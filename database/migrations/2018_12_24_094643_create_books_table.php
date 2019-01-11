@@ -20,6 +20,7 @@ class CreateBooksTable extends Migration
             $table->integer('pageNumber');
             $table->string('icon');
             $table->integer('user_id');
+            $table->string('image');
             $table->timestamps();
         });
     }
