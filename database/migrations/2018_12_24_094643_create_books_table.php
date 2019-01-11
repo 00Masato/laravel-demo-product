@@ -21,6 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('icon');
             $table->integer('user_id');
             $table->string('image');
+            $table->string('review');
             $table->timestamps();
         });
     }
