@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Book;
 use App\Http\Requests\CreateRequest;
+use Illuminate\Support\Facades\Storage;
 
 
 class CreateController extends Controller
@@ -29,7 +30,18 @@ class CreateController extends Controller
         $book->pageNumber = $request->pageNumber;
         $book->icon = $request->icon;
         $book->user_id = Auth::id();
-        $book->image = basename($request->image->storeAs('public/book_images', $request->book . '.jpg'));
+
+        $image = $request->image;
+        $imageContents = file_get_contents($image->getRealPath());
+        $disk = Storage::disk('s3');
+        $disk->put($request->book . '.jpg', $imageContents, 'public');
+
+        $book->image = basename($disk->put($request->book . '.jpg', $imageContents, 'public'));
+
+
+
+        //$book->image = basename($request->image->storeAs('public/book_images', $request->book . '.jpg'));
+
         $book->review = $request->review;
         $book->save();
 

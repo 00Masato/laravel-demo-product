@@ -6,16 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class LogoutController extends Controller
+class UserRegisterController extends Controller
 {
     //
-
-
-    public function getLogout()
+    public function getRegister()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/register');
     }
-
-
 }

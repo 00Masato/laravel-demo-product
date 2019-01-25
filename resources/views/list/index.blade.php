@@ -2,36 +2,30 @@
 @section('title', '一覧画面')
 @section('content')
     @if(Auth::check())
-        <div class="page-header" style="margin-top: -30px; padding-bottom: 0px;">
-            <h1><small>{{$user->name}}さんの読書記録</small></h1>
+        <div class="page-header main-header">
+            <h1><small>{{$user->name}}さんの読書記録</small><a href="{{action('CreateController@index')}}" class="btn-new btn btn-success ">+ 本の新規登録</a></h1>
         </div>
     @endif
-    <a href="{{action('CreateController@index')}}" class="btn btn-success">新規登録</a>
     <form action="" method="post" style="text-align: right;">
         {{csrf_field()}}
-        <input type="text" name="keyword" value="{{$keyword}}">
-        <input type="submit" value="find" class="btn btn-default">
+        <input type="text" name="keyword" value="{{$keyword}}" placeholder="category">
+        <input type="submit" value="検索" class="btn btn-primary">
     </form>
-    <table class="table table-striped table-hover">
+    <table class="table">
         <thead>
         <tr>
-            <th>No</th>
             <th>題名</th>
             <th>カテゴリー</th>
-            <th>アイコン</th>
-            <th>画像</th>
-            <th>operation</th>
+            <th>ステータス</th>
         </tr>
         </thead>
         <tbody>
             @foreach($items as $item)
-                <tr>
-                    <td>{{$item->getDataId()}}</td>
+                <tr class="table-css">
                     <td>{{$item->getDataBook()}}</td>
                     <td>{{$item->getDataCategory()}}</td>
                     <td>{{$item->getDataIcon()}}</td>
-                    <td><img src="{{asset('/storage/book_images/' . $item->getDataImage())}}"></td>
-                    <td>
+                    <td >
                         <a href="{{action('DetailController@index', $item->getDataId())}}" class="btn btn-primary btn-sm">詳細</a>
                         <a href="{{action('UpdateController@index', $item->getDataId())}}" class="btn btn-primary btn-sm">編集</a>
                         <a href="{{action('DeleteController@index', $item->getDataId())}}" class="btn btn-danger btn-sm">削除</a>

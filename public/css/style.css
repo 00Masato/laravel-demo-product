@@ -1,0 +1,77 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+.sidebar {
+    position: fixed;
+    top: 57px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+}
+
+.sidebar {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sidebar .nav {
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+    width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+    margin-left: 0;
+}
+
+.sidebar .nav-link {
+    border-radius: 0;
+}
+
+.main {
+    top: 56px;
+    background-color: #dfe5ed;
+    padding-top: 20px;
+    min-height: 100vh;
+}
+
+.main-header {
+    box-shadow: 2px 2px #555f62;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.btn-new {
+    float: right;
+}
+
+.table-css {
+    background-color: #ffffff;
+    border: 10px #dfe5ed solid;
+
+}
+
+.detail-container {
+    background-color: white;
+
+    margin: 5px;
+    padding-top: 10px;
+}
+
+.delete-container {
+    background-color: white;
+
+    margin: 5px;
+    padding-top: 10px;
+}

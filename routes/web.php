@@ -34,3 +34,5 @@ Route::get('/delete/{id}', 'DeleteController@index');
 Route::post('/delete/{id}', 'DeleteController@delete');
 
 Route::get('/logout', 'LogoutController@getLogout');
+
+Route::get('/userRegister', 'UserRegisterController@getRegister');

@@ -2,7 +2,7 @@
 @section('title', '新規登録画面')
 @section('content')
     @if(Auth::check())
-        <div class="page-header" style="margin-top: -30px; padding-bottom: 0px;">
+        <div class="page-header main-header">
             <h1><small>{{$user->name}}さんの読書記録</small></h1>
         </div>
     @endif
@@ -79,12 +79,4 @@
     </form>
 
     <a href="{{action('ListController@index')}}" class="btn btn-success">戻る</a>
-
-
-
-
-
-
-
-
 @endsection

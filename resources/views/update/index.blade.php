@@ -2,7 +2,7 @@
 @section('title', '編集画面')
 @section('content')
     @if(Auth::check())
-        <div class="page-header" style="margin-top: -30px; padding-bottom: 0px;">
+        <div class="page-header main-header">
             <h1><small>{{$user->name}}さんの読書記録</small></h1>
         </div>
     @endif
@@ -47,8 +47,8 @@
         <div class="form-group">
             <label class="control-label">状態</label>
             <div class="radio">
-                <label><input type="radio" name="icon" value="read">read</label>
-                <label><input type="radio" name="icon" value="reading">reading</label>
+                <label><input type="radio" name="icon" value="read" @if($item->icon == 'read') checked="checked" @endif >read</label>
+                <label><input type="radio" name="icon" value="reading" @if($item->icon == 'reading') checked="checked" @endif >reading</label>
             </div>
         </div>
         @if($errors->has('icon'))
